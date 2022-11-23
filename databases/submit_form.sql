@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Okt 2022 pada 14.22
+-- Waktu pembuatan: 23 Nov 2022 pada 18.16
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 8.1.10
 
@@ -40,6 +40,32 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `mahasiswas`
+--
+
+CREATE TABLE `mahasiswas` (
+  `nim` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `umur` int(11) NOT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kota` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kelas` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jurusan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `mahasiswas`
+--
+
+INSERT INTO `mahasiswas` (`nim`, `nama`, `umur`, `alamat`, `kota`, `kelas`, `jurusan`, `created_at`, `updated_at`) VALUES
+('C.431.20.0068', 'Dwi Agung Permana Putra', 20, 'Pudak Payung Rw 15', 'Semarang', 'Semester 5', 'Teknik Elektro', '2022-11-23 10:12:11', '2022-11-23 10:12:11'),
+('G.231.21.0068', 'Dominica Ardhinia Sekar Widya Wirottama Putri', 19, 'Jalan Perum Polri Durenan Indah Blok EE No. 1 Rt 06 Rw 06 Kelurahan Mangunharjo Kecamatan Tembalang', 'Semarang', 'Semester 3', 'Teknik Informatika', '2022-11-23 10:10:31', '2022-11-23 10:10:31');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `migrations`
 --
 
@@ -58,7 +84,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_10_31_131313_create_posts_table', 2);
+(5, '2022_10_31_131313_create_posts_table', 2),
+(6, '2022_11_23_154738_create_mahasiswas_table', 3);
 
 -- --------------------------------------------------------
 
@@ -114,7 +141,8 @@ INSERT INTO `posts` (`id`, `title`, `description`, `created_at`, `updated_at`) V
 (2, 'effef', 'efefef', '2022-10-31 06:19:16', '2022-10-31 06:19:16'),
 (3, 'a', 'b', '2022-10-31 06:20:07', '2022-10-31 06:20:07'),
 (4, 'sdfgdgfed', 'dsggdg', '2022-10-31 06:20:46', '2022-10-31 06:20:46'),
-(5, 'qw', 'w', '2022-10-31 06:21:43', '2022-10-31 06:21:43');
+(5, 'qw', 'w', '2022-10-31 06:21:43', '2022-10-31 06:21:43'),
+(6, 'ica', 'cantik kyut pake banget', '2022-11-17 11:20:00', '2022-11-17 11:20:00');
 
 -- --------------------------------------------------------
 
@@ -143,6 +171,12 @@ CREATE TABLE `users` (
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indeks untuk tabel `mahasiswas`
+--
+ALTER TABLE `mahasiswas`
+  ADD PRIMARY KEY (`nim`);
 
 --
 -- Indeks untuk tabel `migrations`
@@ -191,7 +225,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -203,7 +237,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
