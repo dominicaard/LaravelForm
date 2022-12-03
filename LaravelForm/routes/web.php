@@ -45,4 +45,3 @@ Route::post('/logout',[LoginController::class,'logout']);
 
 Route::get("registrasi",[RegisterController::class,'index'])->middleware('guest');
 Route::post('registrasi-user',[RegisterController::class,'register'])->middleware('guest');
-// Mahardika Surya Kusuma G.231.21.0141
